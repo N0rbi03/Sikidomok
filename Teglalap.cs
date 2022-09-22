@@ -50,11 +50,11 @@ namespace Sikidomok
 
         
 
-        public double terulet()
+        public double Terulet()
         {
             return Elsooldal*Masodikoldal;
         }
-        public double kerulet()
+        public double Kerulet()
         {
             return 2*(Elsooldal+Masodikoldal);
         }

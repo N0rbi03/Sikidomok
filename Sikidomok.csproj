@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deltoid.cs" />
     <Compile Include="haromszog.cs" />
     <Compile Include="Kor.cs" />
+    <Compile Include="Negyzet.cs" />
+    <Compile Include="Paraleogramma.cs" />
+    <Compile Include="Rombusz.cs" />
     <Compile Include="Sikidomok.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Teglalap.cs" />

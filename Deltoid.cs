@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 
 namespace Sikidomok
 {
-    class haromszog
+    internal class Deltoid
     {
+
         double elsooldal;
         double masodikoldal;
-        double harmadikoldal;
-        double magassag;
-        public haromszog(double elsooldal, double masodikoldal, double harmadikoldal,double magassag)
+        double atloelso;
+        double atlomasodik;
+
+        public Deltoid(double elsooldal, double masodikoldal, double atloelso, double atlomasodik)
         {
             this.elsooldal = elsooldal;
             this.masodikoldal = masodikoldal;
-            this.harmadikoldal = harmadikoldal;
-            this.Magassag = magassag;
+            this.atloelso = atloelso;
+            this.atlomasodik = atlomasodik;
         }
 
         public double Elsooldal 
-        { 
+        {
             get => elsooldal;
             set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("ez nem jó");
+                    throw new ArgumentOutOfRangeException();
                 }
                 else
                 {
@@ -35,11 +37,14 @@ namespace Sikidomok
                 }
             }
         }
-        public double Masodikoldal { get => masodikoldal; set
+        public double Masodikoldal 
+        { 
+            get => masodikoldal; 
+            set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("ez nem jó");
+                    throw new ArgumentOutOfRangeException();
                 }
                 else
                 {
@@ -47,38 +52,44 @@ namespace Sikidomok
                 }
             }
         }
-        public double Harmadikoldal { get => harmadikoldal; set
+        public double Atloelso
+        { 
+            get => atloelso;
+            set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("ez nem jó");
+                    throw new ArgumentOutOfRangeException();
                 }
                 else
                 {
-                    harmadikoldal = value;
+                    atloelso = value;
                 }
             }
         }
-        public double Magassag { get => magassag; set
+        public double Atlomasodik 
+        { 
+            get => atlomasodik;
+            set
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("ez nem jó");
+                    throw new ArgumentOutOfRangeException();
                 }
                 else
                 {
-                    magassag = value;
+                    atlomasodik = value;
                 }
             }
-        }
+            }
 
-        public double Terulet()
-        {
-            return Elsooldal*Magassag;
-        }
         public double Kerulet()
         {
-            return Elsooldal + Masodikoldal + Harmadikoldal;
+            return 2*(Elsooldal+Masodikoldal);
+        }
+        public double Terulet()
+        {
+            return (Atloelso * Atlomasodik) / 2;
         }
     }
 }
